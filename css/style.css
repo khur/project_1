@@ -3,16 +3,20 @@
 
 body{
 	background: inherit;
-	display: flex;
+	
 
 	}
+
+#flexcontainer{
+	display: flex;
+}
 
 #container{
 	width: 49%;
 	/*border: 2px solid silver;*/
 	margin: 0 auto;
 	 flex: 2;
-	color: black;
+	color: gray;
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 4px;
@@ -24,7 +28,7 @@ body{
 	background: gainsboro; 
 	/*border: 1px solid silver;	*/
 	width: 28.9%;
-	margin: 1% 2%;
+	margin: 2% 2% 0%;
 	min-height: 25vh;
 	border-radius: 6px;
 	/*border: 1px solid gray;*/
@@ -118,6 +122,34 @@ button{
 	color: gray;
 
 }
+
+#winningMessage{
+	width: 100%;
+	/*height: 300px;*/
+	top: -300px;
+	position: fixed;
+	margin: 0 auto;
+	transform: scale(0) rotate(0deg);
+	background: inherit;
+	transition: 3s all;
+	font-size: 5em;
+	border: 2px solid gray;
+	border-radius: 5px;
+
+}
+
+#winningMessage.cheesyAnimate {
+	top: 300px;
+	transform: scale(1) rotate(750deg);
+	/*margin: ;*/
+	font-size: 12em;
+	color: black;
+	text-align: center;
+
+
+}
+
+
 
 
 

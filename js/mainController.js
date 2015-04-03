@@ -75,6 +75,8 @@ function MainController($firebaseArray, $firebaseObject){
 				gameInfo.xScore = 0;
 				gameInfo.count = 0;
 				gameInfo.chatLog = [{test: 'talk some smack!'}];
+				gameInfo.winner = '';
+				// gameInfo.currentMove = "X"
 				setPlayer();
 				gameInfo.$save();
 
@@ -125,7 +127,7 @@ function MainController($firebaseArray, $firebaseObject){
 				self.gameInfo.$save();
 			};	
 		}else{
-			alert("Wait your turn bro!");
+			// alert("Wait your turn bro!");
 		}
 
 		getWinner();
@@ -153,56 +155,56 @@ function MainController($firebaseArray, $firebaseObject){
 		var clicks = 0;
 
 			if(one != '' && one === two && one === three){	
-				self.winner = one;
+				self.gameInfo.winner = one;
 				console.log("winner!!");
 				console.log("row one!");
 				scoreKeeper();
 
 			}
 			else if(one != '' && one === four && one === seven){
-				self.winner = one;
+				self.gameInfo.winner = one;
 				console.log("winner!!");
 				console.log("column one!");
 				scoreKeeper();
 			
 			}
 			else if(two != '' && two === five && two === eight){
-				self.winner = two;
+				self.gameInfo.winner = two;
 				console.log("winner!!");
 				console.log("column two!");
 				scoreKeeper();
 			
 			}
 			else if(three != '' && three === six && three === nine){
-				self.winner = three;
+				self.gameInfo.winner = three;
 				console.log("winner!!");
 				console.log("column three!");
 				scoreKeeper();
 			
 			}
 			else if(four != '' && four === five && four === six){
-				self.winner = four;
+				self.gameInfo.winner = four;
 				console.log("winner!!");
 				console.log("row two!");
 				scoreKeeper();
 			
 			}
 			else if(seven != '' && seven === eight && seven === nine){
-				self.winner = seven;
+				self.gameInfo.winner = seven;
 				console.log("winner!!");
 				console.log("row three!");
 				scoreKeeper();
 			
 			}
 			else if(one != '' && one === five && one === nine){
-				self.winner = one;
+				self.gameInfo.winner = one;
 				console.log("winner!!");
 				console.log("diagonal left to right!");
 				scoreKeeper();
 			
 			}
 			else if(three != '' && three === five &&three === seven){
-				self.winner = three;
+				self.gameInfo.winner = three;
 				console.log("winner!!");
 				console.log("diagonal right to left!");
 				scoreKeeper();
@@ -222,9 +224,9 @@ function MainController($firebaseArray, $firebaseObject){
 
 	function scoreKeeper(){
 
-		if(self.winner === "X"){
+		if(self.gameInfo.winner === "X"){
 				 self.gameInfo.xScore++;
-		}else if (self.winner === "O"){
+		}else if (self.gameInfo.winner === "O"){
 				self.gameInfo.oScore++;
 		}
 
@@ -266,7 +268,9 @@ function MainController($firebaseArray, $firebaseObject){
 
 		self.gameInfo.playerSwitch = true;
 		self.gameInfo.count = 0;
-			self.gameInfo.$save();
+		self.gameInfo.winner = '';
+		self.gameInfo.$save();
+		
 	}
 
 

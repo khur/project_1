@@ -21,6 +21,8 @@
 
 
 <body ng-controller="MainController as main">
+	<div id="winningMessage" ng-class="{cheesyAnimate: main.gameInfo.winner}">{{ main.gameInfo.winner + ' ' + "WINS!" }}</div>
+	<div id="flexcontainer">
 	<!-- CHATBOX START -->
 	<div class="chatBox">
 		<ul>
@@ -40,6 +42,7 @@
 		<header>
 			<div class="topLetters">O</div>
 			<div id="ticTacToe">TIC TAC TOE</div>
+
 			<div class="topLetters">X</div>
 		</header><!-- END HEADER  -->
 
@@ -65,7 +68,7 @@
 		
 	</div>
 
-
+	</div><!-- END FLEX BODY -->
 </body>
  
 
