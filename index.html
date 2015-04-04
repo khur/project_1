@@ -21,12 +21,12 @@
 
 
 <body ng-controller="MainController as main">
-	<div id="winningMessage" ng-class="{cheesyAnimate: main.gameInfo.winner}">{{ main.gameInfo.winner + ' ' + "WINS!" }}</div>
+	<div id="winningMessage" ng-class="{cheesyAnimate: main.gameInfo.winner, chessyCats: main.gameinfo.catsGame }">{{ main.gameInfo.winner + ' ' + "WINS!" }}</div>
 	<div id="flexcontainer">
 	<!-- CHATBOX START -->
 	<div class="chatBox">
 		<ul>
-			<li id="chatLog" ng-repeat="post in main.gameInfo.chatLog">
+			<li id="chatLog" ng-class="{userText: main.localPlayer == 'X' }" ng-repeat="post in main.gameInfo.chatLog">
 				{{ post.post }}
 			</li>
 		</ul>

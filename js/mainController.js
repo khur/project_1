@@ -71,6 +71,7 @@ function MainController($firebaseArray, $firebaseObject){
 				gameInfo.oh = "O";
 				gameInfo.ex = "X";
 				gameInfo.playerSwitch = true;
+				gameInfo.catsGame = false;
 				gameInfo.oScore = 0;
 				gameInfo.xScore = 0;
 				gameInfo.count = 0;
@@ -210,6 +211,8 @@ function MainController($firebaseArray, $firebaseObject){
 				scoreKeeper();
 		
 			}else if(self.gameInfo.count === 9){
+				self.gameInfo.catsGame = true;
+				self.gameInfo.$save();	
 				console.log("CCCCAAAAAATTTTTSSS!");
 			}else{
 				console.log("keep rollin..")
