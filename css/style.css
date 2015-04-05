@@ -1,15 +1,17 @@
 *{outline: none; font-family: gill sans;
-	padding: 0; margin: 0; list-style-type: none;}
+	padding: 0; margin: 0; list-style-type: none;
+}
+
 
 body{
 	background: inherit;
-	
+}
 
-	}
 
 #flexcontainer{
 	display: flex;
 }
+
 
 #container{
 	width: 49%;
@@ -20,17 +22,17 @@ body{
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 4px;
-	/*box-shadow: 5px 5px black;*/
-	
+	/*box-shadow: 5px 5px black;*/	
 }
 
+
 .board{
-	background: gainsboro; 
+	/*background: gainsboro; */
 	/*border: 1px solid silver;	*/
 	width: 28.9%;
 	margin: 2% 2% 0%;
 	min-height: 21vh;
-	border-radius: 6px;
+	border-radius: 10px;
 	/*border: 1px solid gray;*/
 	box-shadow: 3px 3px 10px silver;
 	justify-content: center;
@@ -38,10 +40,8 @@ body{
 	font-size: 11em;
 	text-align: center; 
 	color: inherit;
-
-	
-
 }
+
 
 header{
 	width: 94%;
@@ -54,7 +54,6 @@ header{
 	box-shadow: 3px 3px 10px silver;
 	border-radius: 5px;
 	min-height: 15vh;
-
 }
 
 
@@ -63,12 +62,14 @@ header{
   	text-align: center;
 }
 
+
 #ticTacToe{
 	flex: 2;
 	text-align: center;	
 	font-size: 2em;
 	transform: rotate(355deg);
 }
+
 
 #score{
 	width: 100%;
@@ -80,12 +81,14 @@ header{
   	margin: 1%;
 }
 
+
 .tally{
 	width: 10%;
 	font-size: 1.2em;
 	text-align: center;
 	color: inherit;
 }
+
 
 button{
 	color: inherit;
@@ -100,6 +103,7 @@ button{
 	justify-content:flex-end;
 }
 
+
 .chatBox{
 	flex: 1;
 	display: flex;
@@ -110,15 +114,15 @@ button{
 	flex-direction: column;
 }
 
+
 #chatInput{
 	width: 85%;
 	font-size: 2.3em;
 	padding: .5%;
 	color: gray;
 	border: none;
-	
-	 
 }
+
  
 #chatLog{
 	flex: 1;
@@ -126,11 +130,14 @@ button{
 	color: gray;
 }
 
+
 #chatLog.userText{
 	flex: 1;
 	font-size: 2.3em;
 	color: black;
 }
+
+
 #winningMessage{
 	width: 100%;
 	/*height: 300px;*/
@@ -143,30 +150,17 @@ button{
 	font-size: 5em;
 	border: 2px solid gray;
 	border-radius: 5px;
-
 }
+
 
 #winningMessage.cheesyAnimate {
 	top: 300px;
 	transform: scale(1) rotate(750deg);
-	/*margin: ;*/
 	font-size: 12em;
 	color: black;
 	text-align: center;
-
-
 }
 
-#winningMessage.cheesyCats {
-	top: 300px;
-	transform: scale(1) rotate(750deg);
-	/*margin: ;*/
-	font-size: 12em;
-	color: black;
-	text-align: center;
-
-
-}
 
 
 

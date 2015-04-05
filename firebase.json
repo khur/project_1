@@ -1,0 +1,9 @@
+{
+  "firebase": "project1-ttt",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

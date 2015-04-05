@@ -109,7 +109,7 @@ function MainController($firebaseArray, $firebaseObject){
 			self.setPlayer();
 		}*/
 
-		if(self.localPlayer === "X" && self.gameInfo.playerSwitch === true){
+		if(/*self.localPlayer === "X" &&*/ self.gameInfo.playerSwitch === true){
 			if (self.gameSquares[$index].move === '') {
 				self.gameSquares[$index].move = self.gameInfo.ex;
 				self.gameSquares.$save(self.gameSquares[$index]);
@@ -119,7 +119,7 @@ function MainController($firebaseArray, $firebaseObject){
 			};
 			
 			
-		}else if (self.localPlayer === "O" && self.gameInfo.playerSwitch === false){
+		}else if (/*self.localPlayer === "O" &&*/ self.gameInfo.playerSwitch === false){
 			if (self.gameSquares[$index].move === '') {
 				self.gameSquares[$index].move = self.gameInfo.oh;
 				self.gameSquares.$save(self.gameSquares[$index]);
@@ -128,7 +128,7 @@ function MainController($firebaseArray, $firebaseObject){
 				self.gameInfo.$save();
 			};	
 		}else{
-			// alert("Wait your turn bro!");
+			// alert("Wait your turn homie!");
 		}
 
 		getWinner();
@@ -211,7 +211,7 @@ function MainController($firebaseArray, $firebaseObject){
 				scoreKeeper();
 		
 			}else if(self.gameInfo.count === 9){
-				self.gameInfo.catsGame = true;
+				self.gameInfo.winner = "CATS";
 				self.gameInfo.$save();	
 				console.log("CCCCAAAAAATTTTTSSS!");
 			}else{
@@ -300,10 +300,21 @@ function MainController($firebaseArray, $firebaseObject){
 		if(msg === "clearThisMofo"){
 			clearBoard();
 			self.msgInput = '';
-		}else{
-			self.gameInfo.chatLog.push({ post: msg });
-			self.gameInfo.$save();
+		}else if(msg === "resetTheGame"){
+			scoreReset();
 			self.msgInput = '';
+
+		}else{
+			if(self.gameInfo.chatLog.length === 10){
+				self.gameInfo.chatLog.splice(1, 1);
+				self.gameInfo.chatLog.push({ post: msg });
+				self.gameInfo.$save();
+				self.msgInput = '';
+			}else{
+				self.gameInfo.chatLog.push({ post: msg });
+				self.gameInfo.$save();
+				self.msgInput = '';
+			}
 		}
 
 		
