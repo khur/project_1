@@ -130,7 +130,7 @@ function MainController($firebaseArray, $firebaseObject){
 				self.gameInfo.$save();
 			};	
 		}else{
-			// alert("Wait your turn homie!");
+			alert("Wait your turn homie!");
 		}
 
 		getWinner();
