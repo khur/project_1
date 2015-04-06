@@ -22,13 +22,13 @@
 
 <body ng-controller="MainController as main">
 
-	<!-- WINNING ANIMATIN  -->
-	<div id="winningMessage" ng-class="{cheesyAnimate: main.gameInfo.winner }">{{ main.gameInfo.winner + ' ' + "WINS!" }}</div>
+	<!-- WINNING ANIMATING -->
+	<div id="winningMessage" ng-class="{cheesyAnimate: main.gameInfo.winner }">{{ main.gameInfo.winner }}</div>
 	<div id="flexcontainer">
 	<!-- CHATBOX START -->
 	<div class="chatBox">
 		<ul>
-			<li id="chatLog" ng-class="{userText: main.localPlayer == 'X' }" ng-repeat="post in main.gameInfo.chatLog ">
+			<li id="chatLog" ng-repeat="post in main.gameInfo.chatLog ">
 				{{ post.post }}
 			</li>
 		</ul>
@@ -42,10 +42,10 @@
 		
 		<!-- START HEADER -->
 		<header>
-			<div class="topLetters">O</div>
+			<div id="topLetters" ng-class=" {activePlayer: main.gameInfo.playerSwitch === false}">O</div>
 			<div id="ticTacToe">TIC TAC TOE</div>
 
-			<div class="topLetters">X</div>
+			<div id="topLetters" ng-class="{ activePlayer: main.gameInfo.playerSwitch === true}">X</div>
 		</header><!-- END HEADER  -->
 
 			<!-- START OF GAMEBOARD -->

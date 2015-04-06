@@ -57,9 +57,18 @@ header{
 }
 
 
-.topLetters{
+#topLetters{
 	flex: .5;
   	text-align: center;
+  	font-size: 3em;
+}
+
+
+#topLetters.activePlayer{
+	flex: .5;
+  	text-align: center;
+  	font-size: 4em;
+  	color: black;
 }
 
 
@@ -155,9 +164,11 @@ button{
 
 #winningMessage.cheesyAnimate {
 	top: 300px;
-	transform: scale(1) rotate(750deg);
+
+	transform: scale(1) rotate(1100deg);
 	font-size: 12em;
-	color: black;
+	color: white;
+	background-color: black;
 	text-align: center;
 }
 

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('ticTacToe', ['firebase'])
 			.controller('MainController', MainController);
 
@@ -109,7 +111,7 @@ function MainController($firebaseArray, $firebaseObject){
 			self.setPlayer();
 		}*/
 
-		if(/*self.localPlayer === "X" &&*/ self.gameInfo.playerSwitch === true){
+		if(self.localPlayer === "X" && self.gameInfo.playerSwitch === true){
 			if (self.gameSquares[$index].move === '') {
 				self.gameSquares[$index].move = self.gameInfo.ex;
 				self.gameSquares.$save(self.gameSquares[$index]);
@@ -119,7 +121,7 @@ function MainController($firebaseArray, $firebaseObject){
 			};
 			
 			
-		}else if (/*self.localPlayer === "O" &&*/ self.gameInfo.playerSwitch === false){
+		}else if (self.localPlayer === "O" && self.gameInfo.playerSwitch === false){
 			if (self.gameSquares[$index].move === '') {
 				self.gameSquares[$index].move = self.gameInfo.oh;
 				self.gameSquares.$save(self.gameSquares[$index]);
@@ -211,7 +213,7 @@ function MainController($firebaseArray, $firebaseObject){
 				scoreKeeper();
 		
 			}else if(self.gameInfo.count === 9){
-				self.gameInfo.winner = "CATS";
+				self.gameInfo.winner = "CATS GAME!";
 				self.gameInfo.$save();	
 				console.log("CCCCAAAAAATTTTTSSS!");
 			}else{
@@ -228,8 +230,10 @@ function MainController($firebaseArray, $firebaseObject){
 	function scoreKeeper(){
 
 		if(self.gameInfo.winner === "X"){
+				self.gameInfo.winner = "X  wins!"
 				 self.gameInfo.xScore++;
 		}else if (self.gameInfo.winner === "O"){
+				self.gameInfo.winner = "O  wins!"
 				self.gameInfo.oScore++;
 		}
 
